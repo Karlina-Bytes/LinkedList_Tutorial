@@ -142,7 +142,7 @@ LinkedList::~LinkedList()
     {
         p = q;
         q = p -> next;
-        if (q) delete p;
+        delete p;
     }
     cout << "Success: list is deleted." << endl;
 }

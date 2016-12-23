@@ -19,6 +19,12 @@ using namespace std;
 //***********************************************************************************
 struct node
 {
+    node() : song("")
+            ,artist("")
+            ,next(NULL)
+    {
+    }
+    
     string song;
     string artist;
     node * next;

@@ -17,17 +17,17 @@ using namespace std;
 // Node structs contain data and a pointer to the next node.
 // In this project, it will represent a song/artist combination.
 //***********************************************************************************
-struct node
-{
+
+struct node{
     string song;
     string artist;
     node * next;
 };
 
-//***********************************************************************************
-// LinkedList is a list of singly-linked nodes.
-// In this project, it will represent a song playlist.
-//***********************************************************************************
+// //***********************************************************************************
+// // LinkedList is a list of singly-linked nodes.
+// // In this project, it will represent a song playlist.
+// //***********************************************************************************
 class LinkedList
 {
 private:

@@ -11,6 +11,8 @@
 // Default Constructor creates the head node.
 LinkedList::LinkedList()
 {
+
+    // Initialize the head node
     cout << "\nEntering Constructor ..." << endl;
     head = new node;
     head -> song = "head (contains no song data)";
@@ -32,14 +34,20 @@ bool LinkedList::insertNode( node * newNode, int position )
         cout << "Error: the given position is out of range." << endl;
         return false;
     }
+    
+
+    // The first node after the head node.
+    // head->next is NULL.
     if (!head -> next)
     {
         head -> next = newNode;
+        newNode->next = NULL;
         listLength++;
-        cout << "Success: added '" << newNode -> song << "' to position " << position << ".\n";
+        cout << "Success: added'" << newNode -> song << "' to position " << position << ".\n";
         cout << "listLength = " << listLength << endl;
         return true;
     }
+
     int count = 0;
     node * p = head;
     node * q = head;
@@ -51,23 +59,26 @@ bool LinkedList::insertNode( node * newNode, int position )
             newNode -> next = q;
             listLength++;
             cout << "Success: added '" << newNode -> song << "' to position " << position << ".\n";
-            cout << "listLength = " << listLength << endl;
+            cout << "listLength = = " << listLength << endl;
             return true;
         }
         p = q;
         q = p -> next;
         count++;
     }
+
+
+    // Insert at the last place of the list (the tail node.)
     if (count == position)
     {
         p -> next = newNode;
-        newNode -> next = q;
+        newNode -> next = NULL;
         listLength++;
-        cout << "Success: added '" << newNode -> song << "' to position " << position << ".\n";
-        cout << "listLength = " << listLength << endl;
+        cout << "Success: added boo'" << newNode -> song << "' to position " << position << ".\n";
+        cout << "listLength = = = " << listLength << endl;
         return true;
     }
-    cout << "Error: song node was not added to list." << endl;
+    // cout << "Error: song node was not added to list." << endl;
     return false;
 }
 
@@ -118,8 +129,7 @@ void LinkedList::printList()
     int count = 0;
     node * p = head;
     node * q = head;
-    cout << "\n---------------------\n";
-    cout << " Song Playlist\n";
+
     while (q)
     {
         p = q;
